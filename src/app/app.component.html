@@ -1,0 +1,16 @@
+<h2>Liste des tâches</h2>
+<ul>
+  <li
+    *ngFor="let todo of todos"
+    [ngClass]="{ 'line-over-text': todo.done }"
+    (click)="toggleTask(todo)"
+  >
+    {{ todo.label }}
+  </li>
+</ul>
+<input
+  type="text"
+  [(ngModel)]="task"
+  placeholder="Entrez le titre de la tâche"
+/>
+<button (click)="addTask()">Ajouter une tache</button>
